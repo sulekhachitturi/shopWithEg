@@ -7,11 +7,13 @@ import io.cucumber.java.en.When;
 import utility.DriverFactory;
 import pages.LoginPage;
 import pages.AccountPage;
+import pages.PasswordPage;
 
 
 public class StepDefinitions {
 	LoginPage loginPage=new LoginPage(DriverFactory.driver);
 	AccountPage accountpage=new AccountPage(DriverFactory.driver);
+	PasswordPage passwordpage=new PasswordPage(DriverFactory.driver);
 	
 
 	
@@ -46,17 +48,41 @@ public class StepDefinitions {
 
 	
 	
-	@When("user enters firstname with less than 2charactes")
-	public void user_enters_firstname_with_less_than_2charactes() throws InterruptedException {
-		accountpage.enterfirstname();
-		accountpage.clickaccount();
-		
-		
+	
+	@Given("user launches shipWithEg site")
+	public void user_launches_ship_with_eg_site() {
+	    DriverFactory.driver.get("https://stg.shopwitheg.com/");
 	}
 
-	@Then("validate the error message")
-	public void validate_the_error_message() {
-		
-		accountpage.errorvalidation();
+	@When("user clicks on login")
+	public void user_clicks_on_login() {
+		passwordpage.clickLoginButton();
+	    
 	}
+
+	@When("user enters password with valid input")
+	public void user_enters_password_with_valid_input() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Then("user clicks on signin")
+	public void user_clicks_on_signin() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@When("user not enter specialcharacters,numericvalues,lowercase and uppercaseletters")
+	public void user_not_enter_specialcharacters_numericvalues_lowercase_and_uppercaseletters() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@When("user click on signin")
+	public void user_click_on_signin() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+
 }
