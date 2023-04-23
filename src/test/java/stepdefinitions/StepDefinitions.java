@@ -60,29 +60,63 @@ public class StepDefinitions {
 	    
 	}
 
-	@When("user enters password with valid input")
+	@And("user enters password with valid input")
 	public void user_enters_password_with_valid_input() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+		passwordpage.validpassword();
 	}
 
 	@Then("user clicks on signin")
 	public void user_clicks_on_signin() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+		passwordpage.clicksignin();
 	}
 
-	@When("user not enter specialcharacters,numericvalues,lowercase and uppercaseletters")
-	public void user_not_enter_specialcharacters_numericvalues_lowercase_and_uppercaseletters() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	@When("user not enter specialcharacters")
+	public void user_not_enter_specialcharacters() {
+		passwordpage.invalidpassword();
 	}
-
-	@When("user click on signin")
+	@And("user click on signin")
 	public void user_click_on_signin() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+		passwordpage.clicksignin1();
 	}
+
+	@Then("validate error message")
+	public void validate_error_message() {
+		passwordpage.errormessage();
+	    
+	}
+
+	@When("user not enter numericvalues")
+	public void user_not_enter_numericvalues() {
+		passwordpage.invalidnumeric();
+	}
+	
+	@Then("validate error message2")
+	public void validate_error_message2() {
+		passwordpage.errormessage2();
+	}
+
+	@When("user not enter lowercase")
+	public void user_not_enter_lowercase() {
+		passwordpage.invalidlower();
+	}
+	
+
+	@Then("validate error message3")
+	public void validate_error_message3() {
+		
+		passwordpage.errormessage3();
+	}
+
+	@When("user not enter uppercaseletters")
+	public void user_not_enter_uppercaseletters() {
+		passwordpage.invalidupper();
+	}
+	
+	@Then("validate error message4")
+	public void validate_error_message4() {
+		passwordpage.errormessage4();
+	}
+	
 
 
 }
